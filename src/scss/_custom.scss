@@ -1,0 +1,61 @@
+// add your custom styles here
+body {
+    background-color: $brand-black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: $white;
+}
+
+.side {
+    @include make-col-ready();
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(4);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .logo {
+        width: 50%;
+        margin-top: 1rem;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    @include make-row();
+
+    li {
+        list-style: none;
+        align-items: center;
+        text-align: center;
+        font-size: 5rem;
+        color: $brand-green;
+        background-color: $brand-grey;
+        border: 5px solid $brand-black;
+        border-radius: 5px;
+        @include make-col-ready();
+
+        @include media-breakpoint-up(sm) {
+            @include make-col(3);
+        }
+
+        .fab {
+            line-height: 12rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: $brand-black;
+            background-color: $brand-green;
+        }
+    }
+}
