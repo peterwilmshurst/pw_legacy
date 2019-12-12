@@ -11,51 +11,128 @@ body {
     color: $white;
 }
 
-.side {
+.left {
     @include make-col-ready();
 
     @include media-breakpoint-up(sm) {
-        @include make-col(4);
+        @include make-col(2);
     }
 
-    h1 {
-        text-align: center;
-    }
+    nav {
+        ul {
+            margin: 0;
+            padding: 0;
 
-    .logo {
-        width: 50%;
-        margin-top: 1rem;
+            li {
+                display: block;
+                text-transform: uppercase;
+
+                a {
+                    color: $white;
+                    background-color: $brand-grey;
+                    padding: 1rem;
+                    line-height: 6rem;
+                    font-weight: bold;
+                    font-size: 2.25rem;
+
+                    &:hover {
+                        background-color: $brand-green;
+                        color: $white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
     }
 }
 
-ul {
-    padding: 0;
-    margin: 0;
-    @include make-row();
+.content {
+    @include make-col-ready();
 
-    li {
-        list-style: none;
-        align-items: center;
-        text-align: center;
-        font-size: 5rem;
-        color: $brand-green;
-        background-color: $brand-grey;
-        border: 5px solid $brand-black;
-        border-radius: 5px;
-        @include make-col-ready();
+    @include media-breakpoint-up(sm) {
+        @include make-col(8);
+    }
 
-        @include media-breakpoint-up(sm) {
-            @include make-col(3);
+    ul {
+        &.skills {
+            padding: 0;
+            margin: 0;
+            @include make-row();
+
+            li {
+                list-style: none;
+                align-items: center;
+                text-align: center;
+                font-size: 5rem;
+                color: $brand-green;
+                background-color: $brand-grey;
+                border: 5px solid $brand-black;
+                border-radius: 5px;
+                @include make-col-ready();
+
+                @include media-breakpoint-up(sm) {
+                    @include make-col(3);
+                }
+
+                .fab {
+                    line-height: 12rem;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: $brand-black;
+                    background-color: $brand-green;
+                }
+
+                img {
+                    max-width: 100%;
+                    vertical-align: middle;
+                }
+            }
         }
 
-        .fab {
-            line-height: 12rem;
-        }
+        &.instagram {
+            padding: 0;
+            margin: 0;
+            @include make-row();
 
-        &:hover {
-            cursor: pointer;
-            color: $brand-black;
-            background-color: $brand-green;
+            li {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                text-align: center;
+                font-size: 5rem;
+                color: $brand-green;
+                background-color: $brand-grey;
+                border: 5px solid $brand-black;
+                border-radius: 5px;
+                @include make-col-ready();
+
+                @include media-breakpoint-up(sm) {
+                    @include make-col(4);
+                }
+
+                img {
+                    max-width: 100%;
+                    vertical-align: middle;
+                }
+            }
         }
     }
+}
+
+.right {
+    @include make-col-ready();
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(2);
+    }
+
+    .logo {
+        width: 200px;
+        height: auto;
+        float: right;
+        margin: 1rem;
+    }
+
 }
