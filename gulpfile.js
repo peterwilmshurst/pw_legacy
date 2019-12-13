@@ -62,7 +62,7 @@ gulp.task('scripts', function () {
 
 // Compress images
 gulp.task('image', function () {
-    gulp.src('src/img/*')
+    gulp.src('src/img/**/*')
         .pipe(imagemin([
             imagemin.gifsicle({
                 interlaced: true

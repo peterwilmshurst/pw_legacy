@@ -52,8 +52,7 @@ body {
             li {
                 display: inline-block;
                 text-transform: uppercase;
-                margin-right: 1rem;
-
+                margin: 0.5rem;
 
                 a {
                     color: $white;
@@ -67,6 +66,10 @@ body {
                         background-color: $brand-green;
                         color: $white;
                         text-decoration: none;
+                    }
+
+                    &.active {
+                        background-color: $brand-green;
                     }
                 }
 
@@ -161,6 +164,40 @@ body {
     &.text {
         padding: 1rem;
         background-color: $brand-grey;
+    }
+
+    .work-item {
+        @include make-row();
+        height: 12rem;
+        border-bottom: 10px solid $brand-black;
+
+        .work-item--image {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            @include make-col-ready();
+
+            @include media-breakpoint-up(sm) {
+                @include make-col(2);
+            }
+        }
+
+        .work-item--description {
+
+            @include make-col-ready();
+
+            @include media-breakpoint-up(sm) {
+                @include make-col(10);
+            }
+        }
+    }
+
+    &.full {
+        @include media-breakpoint-up(md) {
+            @include make-col(10);
+        }
     }
 }
 
