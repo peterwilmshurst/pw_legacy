@@ -75,11 +75,11 @@ gulp.task('image', function () {
             }),
             imagemin.svgo({
                 plugins: [{
-                        removeViewBox: true
-                    },
-                    {
-                        cleanupIDs: false
-                    }
+                    removeViewBox: true
+                },
+                {
+                    cleanupIDs: false
+                }
                 ]
             })
         ]))
@@ -93,9 +93,9 @@ gulp.task('default', ['serve']);
 gulp.task('deploy', function () {
 
     var conn = vinylFTP.create({
-        host: 'mywebsite.tld',
-        user: 'me',
-        password: 'mypass',
+        host: '77.104.134.160',
+        user: 'peterwi0',
+        password: '-=W3-@D4-T40',
         parallel: 10,
         log: gulpUtil.log
     });
@@ -108,9 +108,9 @@ gulp.task('deploy', function () {
     // turn off buffering in gulp.src for best performance
 
     return gulp.src(globs, {
-            base: './public/',
-            buffer: false
-        })
+        base: './public/',
+        buffer: false
+    })
         .pipe(conn.newer('/public_html/')) // only upload newer files to this folder on the server
         .pipe(conn.dest('/public_html/'));
 

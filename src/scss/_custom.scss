@@ -11,29 +11,57 @@ body {
     color: $white;
 }
 
+.site {
+    min-height: 100vh;
+}
+
 .left {
     @include make-col-ready();
 
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
         @include make-col(2);
     }
 
+    padding: 1rem;
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
     nav {
+        @include make-row();
+
+        h1 {
+            @include make-col-ready();
+
+            @include media-breakpoint-down(sm) {
+                @include make-col(4);
+            }
+        }
+
         ul {
+            @include make-col-ready();
+
+            @include media-breakpoint-down(sm) {
+                @include make-col(8);
+            }
+
             margin: 0;
             padding: 0;
 
             li {
-                display: block;
+                display: inline-block;
                 text-transform: uppercase;
+                margin-right: 1rem;
+
 
                 a {
                     color: $white;
                     background-color: $brand-grey;
                     padding: 1rem;
-                    line-height: 6rem;
                     font-weight: bold;
-                    font-size: 2.25rem;
+                    font-size: 2vw;
+                    display: inline-block;
 
                     &:hover {
                         background-color: $brand-green;
@@ -41,15 +69,25 @@ body {
                         text-decoration: none;
                     }
                 }
+
+                @include media-breakpoint-up(md) {
+                    display: list-item;
+                    list-style: none;
+                    margin-right: 0;
+                    margin-bottom: 2rem;
+
+                }
             }
         }
     }
 }
 
 .content {
+    min-height: 100vh;
+
     @include make-col-ready();
 
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
         @include make-col(8);
     }
 
@@ -119,20 +157,34 @@ body {
             }
         }
     }
+
+    &.text {
+        padding: 1rem;
+        background-color: $brand-grey;
+    }
 }
 
 .right {
-    @include make-col-ready();
+    display: none;
+    visibility: hidden;
 
-    @include media-breakpoint-up(sm) {
-        @include make-col(2);
+    @include media-breakpoint-up(md) {
+        display: block;
+        visibility: visible;
+
     }
 
-    .logo {
-        width: 200px;
-        height: auto;
-        float: right;
-        margin: 1rem;
-    }
+    position: relative;
 
+    .fixed {
+        position: fixed !important;
+        overflow: scroll;
+        height: 100vh;
+
+        @include make-col-ready();
+
+        @include media-breakpoint-up(md) {
+            @include make-col(2);
+        }
+    }
 }
