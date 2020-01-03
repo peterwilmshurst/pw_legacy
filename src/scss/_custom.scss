@@ -104,7 +104,7 @@ body {
                 list-style: none;
                 align-items: center;
                 text-align: center;
-                font-size: 5rem;
+                font-size: 6rem;
                 color: $brand-green;
                 background-color: $brand-grey;
                 border: 5px solid $brand-black;
@@ -112,11 +112,11 @@ body {
                 @include make-col-ready();
 
                 @include media-breakpoint-up(sm) {
-                    @include make-col(3);
+                    @include make-col(4);
                 }
 
                 .fab {
-                    line-height: 12rem;
+                    line-height: 240px;
                 }
 
                 &:hover {
@@ -128,6 +128,14 @@ body {
                 img {
                     max-width: 100%;
                     vertical-align: middle;
+                }
+
+                a {
+                    color: inherit;
+
+                    &:hover {
+                        color: inherit;
+                    }
                 }
             }
         }
@@ -159,39 +167,54 @@ body {
                 }
             }
         }
+
+        // Portfolio Page 
+        &.work {
+            padding: 0;
+            margin: 0;
+            @include make-row();
+
+            li {
+                list-style: none;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 2rem;
+                line-height: 240px;
+                border: 5px solid #2A263D;
+                @include make-col-ready();
+
+                @include media-breakpoint-up(sm) {
+                    @include make-col(4);
+                }
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                &.wide {
+                    @include media-breakpoint-up(sm) {
+                        @include make-col(8);
+                    }
+
+                }
+                .logo {
+                    padding: 2rem;
+                
+                    &.white {
+                        background-color: #fff;
+                    }
+                    &.black {
+                        background-color: #12100B;
+                    }
+                }
+            }
+        }
     }
 
     &.text {
         padding: 1rem;
         background-color: $brand-grey;
-    }
-
-    .work-item {
-        @include make-row();
-        height: 12rem;
-        border-bottom: 10px solid $brand-black;
-
-        .work-item--image {
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-
-            @include make-col-ready();
-
-            @include media-breakpoint-up(sm) {
-                @include make-col(2);
-            }
-        }
-
-        .work-item--description {
-
-            @include make-col-ready();
-
-            @include media-breakpoint-up(sm) {
-                @include make-col(10);
-            }
-        }
     }
 
     &.full {
