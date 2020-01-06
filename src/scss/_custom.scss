@@ -178,18 +178,13 @@ body {
                 list-style: none;
                 align-items: center;
                 text-align: center;
-                margin-bottom: 2rem;
-                line-height: 240px;
+                display: flex;
                 border: 5px solid #2A263D;
+                background-color: $brand-grey;
                 @include make-col-ready();
 
                 @include media-breakpoint-up(sm) {
                     @include make-col(4);
-                }
-
-                img {
-                    max-width: 100%;
-                    height: auto;
                 }
 
                 &.wide {
@@ -198,15 +193,22 @@ body {
                     }
 
                 }
+
                 .logo {
                     padding: 2rem;
-                
-                    &.white {
-                        background-color: #fff;
+                    img {
+                        max-width: 100%;
+                        width: 100vw;
+                        height: auto;
                     }
-                    &.black {
-                        background-color: #12100B;
-                    }
+                }
+
+                &.white-bg {
+                    background-color: $white;
+                }
+
+                &.black-bg {
+                    background-color: #12100B;
                 }
             }
         }
