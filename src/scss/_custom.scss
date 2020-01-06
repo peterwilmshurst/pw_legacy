@@ -196,6 +196,7 @@ body {
 
                 .logo {
                     padding: 2rem;
+
                     img {
                         max-width: 100%;
                         width: 100vw;
@@ -249,4 +250,19 @@ body {
             @include make-col(2);
         }
     }
+}
+
+.date {
+    text-transform: uppercase;
+    color: $brand-green;
+}
+
+.blog-post {
+    background-color: $brand-grey;
+    padding: 1rem;
+    border: 5px solid $brand-black;
+    h2 {
+        color: $brand-green;
+        font-weight: bold;
+        text-decoration: underline;    }
 }
