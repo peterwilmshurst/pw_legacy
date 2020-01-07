@@ -264,5 +264,15 @@ body {
     h2 {
         color: $brand-green;
         font-weight: bold;
-        text-decoration: underline;    }
+        text-decoration: underline;    
+    }
+    a {
+        color: $white;
+        text-decoration: underline;
+        font-weight: bold;
+     
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
