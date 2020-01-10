@@ -196,10 +196,12 @@ body {
 
                 .logo {
                     padding: 2rem;
+                    margin: auto;
 
                     img {
-                        max-width: 100%;
-                        width: 100vw;
+                        display: block;
+                        margin: auto;
+                        width: 100%;
                         height: auto;
                     }
                 }
