@@ -88,3 +88,6 @@ gulp.task('image', function () {
 
 // Default task
 gulp.task('default', ['serve']);
+
+// Deploy task
+gulp.task('deploy', ['html', 'sass', 'scripts', 'image']);
