@@ -1,7 +1,7 @@
 {
-  "name": "initiate",
+  "name": "peterwilmshurst.co.uk",
   "version": "2.0.0",
-  "description": "Project startup which includes: Node.js, Gulp, Browsersync, Htmlmin, Sass, Autoprefixer, Plumber, Sourcemaps, Uglify, Gulp Util and Vinyl FTP",
+  "description": "Personal website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,6 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
-    "gulp-util": "^3.0.8",
-    "vinyl-ftp": "^0.6.1"
+    "gulp-util": "^3.0.8"
   }
 }
