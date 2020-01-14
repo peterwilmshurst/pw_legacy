@@ -15,7 +15,8 @@ var gulpUtil = require('gulp-util');
 gulp.task('serve', ['html', 'sass'], function () {
 
     browserSync.init({
-        server: './public'
+        server: './public',
+        open: false
     });
 
     gulp.watch('src/*.html', ['html']);
