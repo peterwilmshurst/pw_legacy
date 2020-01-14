@@ -10,13 +10,13 @@ var imagemin = require('gulp-imagemin');
 var browserSync = require('browser-sync').create();
 
 var gulpUtil = require('gulp-util');
-var vinylFTP = require('vinyl-ftp');
 
 // Static Server + watching scss/html/js files
 gulp.task('serve', ['html', 'sass'], function () {
 
     browserSync.init({
-        server: './public'
+        server: './public',
+        open: false
     });
 
     gulp.watch('src/*.html', ['html']);
@@ -89,29 +89,5 @@ gulp.task('image', function () {
 // Default task
 gulp.task('default', ['serve']);
 
-// Deployment
-gulp.task('deploy', function () {
-
-    var conn = vinylFTP.create({
-        host: 'mywebsite.tld',
-        user: 'me',
-        password: 'mypass',
-        parallel: 10,
-        log: gulpUtil.log
-    });
-
-    var globs = [
-        'public/**' // upload everything in the public folder
-    ];
-
-    // using base = '.' will transfer everything to /public_html correctly
-    // turn off buffering in gulp.src for best performance
-
-    return gulp.src(globs, {
-        base: './public/',
-        buffer: false
-    })
-        .pipe(conn.newer('/public_html/')) // only upload newer files to this folder on the server
-        .pipe(conn.dest('/public_html/'));
-
-});
+// Deploy task
+gulp.task('deploy', ['html', 'sass', 'scripts', 'image']);
