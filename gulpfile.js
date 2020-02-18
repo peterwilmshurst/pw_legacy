@@ -86,8 +86,15 @@ gulp.task('image', function () {
         .pipe(gulp.dest('public/img'));
 });
 
+// Copy docs folder to public
+gulp.task('copy', () => {
+    return gulp
+        .src('src/docs/*')
+        .pipe(gulp.dest('public/docs'));
+});
+
 // Default task
 gulp.task('default', ['serve']);
 
 // Deploy task
-gulp.task('deploy', ['html', 'sass', 'scripts', 'image']);
+gulp.task('deploy', ['html', 'sass', 'scripts', 'image', 'copy']);
