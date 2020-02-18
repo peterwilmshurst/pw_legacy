@@ -222,6 +222,16 @@ body {
     &.text {
         padding: 1rem;
         background-color: $brand-grey;
+
+        a {
+            color: $white;
+            text-decoration: underline;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 
     &.full {
@@ -241,18 +251,18 @@ body {
 
     }
 
+    @include make-col-ready();
+
+    @include media-breakpoint-up(md) {
+        @include make-col(2);
+    }
+
     position: relative;
 
     .fixed {
         position: fixed !important;
         overflow: scroll;
         height: 100vh;
-
-        @include make-col-ready();
-
-        @include media-breakpoint-up(md) {
-            @include make-col(2);
-        }
     }
 }
 
@@ -265,18 +275,49 @@ body {
     background-color: $brand-grey;
     padding: 1rem;
     border: 5px solid $brand-black;
+
     h2 {
         color: $brand-green;
         font-weight: bold;
-        text-decoration: underline;    
+        text-decoration: underline;
     }
+
     a {
         color: $white;
         text-decoration: underline;
         font-weight: bold;
-     
+
         &:hover {
             text-decoration: none;
+        }
+    }
+}
+
+.quick-links {
+    padding-top: 1rem;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 0.625rem;
+
+            i {
+                margin-right: 1rem;
+
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+
+                &:hover {
+                    color: $brand-green;
+                    text-decoration: underline;
+                }
+
+            }
         }
     }
 }
