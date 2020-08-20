@@ -1,0 +1,19 @@
+body {
+    color: $brand-grey;
+    background-color: $white;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 400;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+a {
+    color: $brand-green;
+
+    &:hover {
+        color: $brand-green;
+        text-decoration: underline;
+    }
+}

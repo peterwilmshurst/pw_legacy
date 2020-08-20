@@ -1,0 +1,20 @@
+footer {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .social {
+        ul {
+            li {
+                display: inline-block;
+                text-align: right;
+                padding: 0.625rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}

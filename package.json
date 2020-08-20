@@ -1,26 +1,30 @@
 {
-  "name": "peterwilmshurst.co.uk",
-  "version": "2.0.0",
-  "description": "Personal website",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Peter Wilmshurst",
-  "license": "ISC",
-  "devDependencies": {
-    "bootstrap": "^4.1.3",
-    "browser-sync": "^2.26.3",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-plumber": "^1.2.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.1",
-    "gulp-util": "^3.0.8"
-  }
+    "name": "init",
+    "version": "3.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Peter Wilmshurst",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.8.7",
+        "@babel/preset-env": "^7.8.7",
+        "@babel/register": "^7.8.6",
+        "babel-preset-es2015": "^6.24.1",
+        "browser-sync": "^2.26.12",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-htmlmin": "^5.0.1",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-include": "^2.4.1",
+        "gulp-newer": "^1.4.0",
+        "gulp-sass": "^4.0.2"
+    },
+    "dependencies": {
+        "bulma": "^0.8.0",
+        "slick-carousel": "^1.8.1"
+    }
 }
