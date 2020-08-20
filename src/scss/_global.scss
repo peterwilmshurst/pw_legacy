@@ -11,9 +11,10 @@ body {
 
 a {
     color: $brand-green;
+    text-decoration: underline;
 
     &:hover {
         color: $brand-green;
-        text-decoration: underline;
+        text-decoration: none;
     }
 }
