@@ -1,0 +1,27 @@
+.content {
+    .blog-post {
+        border-top: 1px solid $brand-green;
+        padding-top: 2rem;
+
+
+        .date {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            margin: 0 0 1rem 0;
+        }
+
+        &__footer {
+            margin-bottom: 1rem;
+
+            &__logo {
+                img {
+                    max-width: 1.5rem;
+                    max-height: 1.5rem;
+                    margin-right: 0.25rem;
+                }
+            }
+        }
+    }
+}

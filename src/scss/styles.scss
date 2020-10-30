@@ -25,10 +25,11 @@
 */
 
 /* 3rd Party */
-@import "./node_modules/bulma/bulma.sass";
+@import './node_modules/bulma/bulma.sass';
 
-@import "variables";
-@import "global";
-@import "about";
-@import "header";
-@import "footer";
+@import 'variables';
+@import 'global';
+@import 'about';
+@import 'latest-articles';
+@import 'header';
+@import 'footer';
