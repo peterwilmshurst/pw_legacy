@@ -12,15 +12,27 @@ import del from "del";
 
 
 // Options
-const htmlOptions = { collapseWhitespace: 'true' };
-const sassOptions = { outputStyle: 'compressed', errLogToConsole: true };
-const includeOptions = { extensions: ['js', 'html'], hardFail: true, separateInputs: true };
-const jsOptions = { presets: ["@babel/preset-env"] };
+const htmlOptions = {
+    collapseWhitespace: 'true'
+};
+const sassOptions = {
+    outputStyle: 'compressed',
+    errLogToConsole: true
+};
+const includeOptions = {
+    extensions: ['js', 'html'],
+    hardFail: true,
+    separateInputs: true
+};
+const jsOptions = {
+    presets: ["@babel/preset-env"]
+};
 
 // functions
 function html() {
     return gulp.src(['./src/**/*.html',
-        '!./src/partials/*.html'])
+            '!./src/partials/*.html'
+        ])
         .pipe(include(includeOptions))
         .pipe(htmlmin(htmlOptions))
         .pipe(gulp.dest('./dist/'));
@@ -37,33 +49,42 @@ function css() {
     return gulp.src('./src/scss/*.scss')
         .pipe(sass(sassOptions))
         .pipe(gulp.dest('./dist/css'))
-        .pipe(browserSync.reload({ stream: true }));
+        .pipe(browserSync.reload({
+            stream: true
+        }));
 };
 
 function sasslint() {
     return gulp.src('./src/scss/*.s+(a|c)ss')
-      .pipe(sassLint())
-      .pipe(sassLint.format())
-      .pipe(sassLint.failOnError())
-  };
+        .pipe(sassLint())
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError())
+};
 
 function img() {
     return gulp.src('./src/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./dist/img'))
-        .pipe(browserSync.reload({ stream: true }))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 }
 
 function clean() {
     return del(['dist/**/*']);
 };
 
-function cachebust (){
+function cachebust() {
     let cbString = new Date().getTime();
     return gulp.src(['./dist/**/*.html'])
         .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
         .pipe(gulp.dest('./dist/'));
 };
+
+function copy() {
+    return gulp.src('./src/docs/**/*')
+        .pipe(gulp.dest('./dist/docs'));
+}
 
 gulp.task('serve', () => {
     browserSync.init({
@@ -90,14 +111,15 @@ gulp.task('js', js);
 gulp.task('css', css);
 gulp.task('img', img);
 gulp.task('cachebust', cachebust);
+gulp.task('copy', copy);
 
 // watch task
 gulp.task('default', gulp.series('serve'));
 
 // deploy task
-gulp.task('deploy', 
-gulp.series(
-    gulp.parallel(html, js, css, img),
-    cachebust
-)
+gulp.task('deploy',
+    gulp.series(
+        gulp.parallel(clean, copy, html, js, css, img),
+        cachebust
+    )
 );
